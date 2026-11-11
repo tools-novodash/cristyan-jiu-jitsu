@@ -73,7 +73,7 @@ export function Invite({ withAcademy = true }: { withAcademy?: boolean }) {
               <ul className="tk__pts" role="list">
                 {TRIAL.points.map((p) => <li key={p.t}><span className="tk__ic" aria-hidden="true"><Icon name={p.icon as IconName} /></span><span><strong className="hand">{p.t}</strong>{p.d}</span></li>)}
               </ul>
-              <div className="tk__acts"><span className="tk__btn"><Cta /><span className="tk__note hand" aria-hidden="true">{TRIAL.note}</span></span><p>{TRIAL.privateOption}</p></div>
+              <div className="tk__acts"><Cta /><p>{TRIAL.privateOption}</p></div>
             </div>
             <div className="tk__stub" aria-hidden="true"><Mark /><span>Cristyan Jiu-Jitsu</span><span>No. 001</span></div>
           </div>

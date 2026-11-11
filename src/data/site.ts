@@ -172,7 +172,6 @@ export const TRIAL = {
     { icon: 'group', t: 'Small groups', d: 'At most five trial students per class, so the coach has time for you.' },
   ],
   privateOption: 'Prefer one on one? Ask for a 30-minute private trial class.',
-  note: 'See you on the mat!', // handwritten beside the button (the font is subset to these notes)
 }
 
 

@@ -214,8 +214,6 @@ html.menu-open{overflow:hidden}
 .tk__pts li:first-child strong{color:var(--r-btn)}
 .tk__pts span{font-size:13.5px;line-height:1.45;color:var(--mute)}
 .tk__acts{display:grid;gap:12px;justify-items:start;margin-top:18px}
-.tk__btn{position:relative;display:inline-flex}
-.tk__note{position:absolute;right:-14px;top:-30px;font-size:22px;line-height:1;white-space:nowrap;color:var(--r-btn);rotate:-6deg;pointer-events:none}
 .tk__acts p{font-size:13.5px;color:var(--mute)}
 .tk__stub{display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:22px 0;background:var(--k);color:var(--w);--mark-cut:var(--k)}
 .tk__stub svg{width:40px;height:40px;color:var(--r)}
@@ -228,7 +226,7 @@ html.menu-open{overflow:hidden}
   .iv__win i{background:linear-gradient(180deg,transparent 40%,var(--k))}
   .iv__grid{grid-template-columns:1fr;gap:26px}
   .iv__h{margin-top:-40px;max-width:none;font-size:clamp(46px,13vw,72px)}
-  .tk__note{right:-4px;font-size:19px}
+
   .tk{grid-template-columns:minmax(0,1fr) 60px;transform:rotate(-1deg)}
   .tk::before{right:60px}
   .tk__stub svg{width:30px;height:30px}
@@ -299,12 +297,11 @@ html.menu-open{overflow:hidden}
 .pf__acc .qa__a p{padding:0 52px 16px 18px;font-size:14.5px}
 /* the button sits on the panel's bottom edge, half in and half out (Adryan, 11/11) */
 .pf__acts{position:absolute;left:50%;bottom:0;z-index:3;translate:-50% 50%}
-.pf__acts .cta{background:var(--k)}
 .pf__stage{position:relative;flex:1;display:flex;justify-content:center;align-items:flex-end;margin-top:30px;overflow:hidden}
 /* the panel behind him: red, flush with the bottom of the white card (Adryan, 11/11) */
-.pf__panel{position:absolute;left:0;right:0;bottom:0;height:52%;overflow:hidden;background:var(--r-btn);--mark-cut:var(--r-btn);transform-origin:50% 100%}
+.pf__panel{position:absolute;left:0;right:0;bottom:0;height:52%;overflow:hidden;background:var(--k);--mark-cut:var(--k);transform-origin:50% 100%}
 /* the marks tone on tone, dark on the flat red, so the cut circle matches the panel (Adryan, 11/11) */
-.pf__marks{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;color:rgba(13,13,15,.12)}
+.pf__marks{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;color:rgba(255,255,255,.08)}
 .pf__marks svg{flex:none;height:88%;width:auto;aspect-ratio:1}
 .pf__me{position:relative;z-index:1;margin-bottom:0;width:min(calc(42vh / var(--zs,1)),360px,56%);line-height:0}
 .pf__me img{width:100%;height:auto;filter:drop-shadow(0 10px 18px rgba(13,13,15,.18))}

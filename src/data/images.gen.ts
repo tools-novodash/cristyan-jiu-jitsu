@@ -152,7 +152,6 @@ export const IMG = {
   },
   "prof_cut": {
     "w": 832,
-    "h": 1427,
-    "sm": 480
+    "h": 1427
   }
 } as const

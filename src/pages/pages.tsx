@@ -135,6 +135,7 @@ export function InstructorsPage() {
         sub="Professor Cristyan Martins, 4th-degree black belt, two-time world champion, 20 years teaching. He teaches with his family and a team of specialists."
         photo={PROFESSOR.family} pos="50% 30%" />
       <Passport />
+      <Professor />
       <Staff />
       <Closing title="Train with the team." />
     </>

@@ -14,6 +14,7 @@ const out = path.join(root, 'public', 'images')
 fs.mkdirSync(out, { recursive: true })
 const SOURCES = ['reference/current-site/images', 'reference/drive'].map((d) => path.join(root, d)).filter((d) => fs.existsSync(d))
 const SKIP = /^(icon-|f7f4fb)/ // the old site's clip-art icons and a screenshot of it
+const KEEP = /^prof_cut$/ // kept at full quality (see below)
 
 const sizes = {}
 const key = (f) => f.replace(/\.(jpe?g|png|webp)$/i, '').replace(/[^a-z0-9]+/gi, '_').replace(/^_|_$/g, '').toLowerCase()
@@ -23,6 +24,16 @@ for (const dir of SOURCES) {
     if (/^logo/.test(name)) {
       const info = await sharp(src).resize({ width: 640 }).png({ compressionLevel: 9 }).toFile(path.join(out, `${name}.png`))
       sizes[name] = { w: info.width, h: info.height, ext: 'png' }
+      continue
+    }
+    // the coach's cutout (Adryan, 11/11: re-encoding it at 74 and serving a 480 px copy blurred it):
+    // the client's file as it came, one size only
+    if (KEEP.test(name)) {
+      const dst = path.join(out, `${name}.webp`)
+      if (/\.webp$/i.test(f)) fs.copyFileSync(src, dst)
+      else await sharp(src).rotate().webp({ quality: 95, effort: 6 }).toFile(dst)
+      fs.rmSync(path.join(out, `${name}-sm.webp`), { force: true })
+      sizes[name] = { w: meta.width, h: meta.height }
       continue
     }
     const w = Math.min(1920, meta.width)

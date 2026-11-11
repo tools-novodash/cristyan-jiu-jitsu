@@ -38,3 +38,5 @@ Thumbs.db
 coverage/
 # QA screenshots (regenerate with scripts/shots.mjs / compare.mjs)
 public/memory/prints/
+# Raw source material (old site photos, Drive photos, old blog): local only, read by scripts/images.mjs
+reference/

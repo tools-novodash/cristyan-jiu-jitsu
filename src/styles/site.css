@@ -382,20 +382,11 @@ html.menu-open{overflow:hidden}
 /* ── the space: a camera tour of the empty academy in one photo (Adryan, 11/11: not Lobo's walk-in) ── */
 .tr{position:relative;overflow-x:clip;height:calc(536svh / var(--zs,1));background:var(--k);color:var(--w)}
 .tr__stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;isolation:isolate}
-.tr__stage .tr__scene{--s:1;--x:0px;--y:0px;position:absolute;left:50%;top:50%;width:max(100%,calc(100svh * 1.7767));aspect-ratio:1400/788;translate:-50% -50%;transform:translate(var(--x),var(--y)) scale(var(--s));will-change:transform}
-.tr__scene img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tr__shot{position:absolute;inset:0;overflow:hidden;background:var(--k);font-style:normal}
+.tr__shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;will-change:transform}
 .tr__dim{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(13,13,15,.86),rgba(13,13,15,.4) 52%,rgba(13,13,15,.14)),linear-gradient(0deg,rgba(13,13,15,.7),transparent 46%);transition:opacity .6s ease}
 .tr.is-stop .tr__dim{opacity:.6}
 /* the pins: the logo's diamond, numbered, kept the same size whatever the zoom */
-.tr__pin{position:absolute;z-index:2;display:grid;place-items:center;width:46px;height:46px;margin:-23px 0 0 -23px;opacity:0;transform:scale(calc(1 / var(--s,1)));transition:opacity .4s ease}
-.tr__pin b{position:relative;display:grid;place-items:center;width:32px;height:32px;color:var(--w);font:800 15px/1 var(--f-d)}
-.tr__pin b::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--r-btn);rotate:45deg;box-shadow:0 0 0 3px var(--w),0 10px 24px rgba(0,0,0,.5);transition:background .3s}
-.tr__pin i{position:absolute;inset:7px;border:2px solid var(--w);opacity:0}
-.tr__pin.on i{animation:tr-ping 1.5s ease-out infinite}
-@keyframes tr-ping{0%{transform:rotate(45deg) scale(.8);opacity:.9}100%{transform:rotate(45deg) scale(2.2);opacity:0}}
-.tr__pin.on,.tr__pin.seen{opacity:1}
-.tr__pin.seen:not(.on) b::before{background:var(--k)}
-.tr.is-end .tr__pin.seen b::before{background:var(--r-btn)}
 .tr__ui{position:relative;z-index:3;height:100%}
 .tr__intro,.tr__end,.tr__caps{position:absolute;left:var(--gl);bottom:clamp(44px,calc(8vh / var(--zs,1)),96px)}
 .tr__intro{max-width:620px;transition:opacity .5s ease,transform .6s var(--ease)}
@@ -427,8 +418,6 @@ html.menu-open{overflow:hidden}
 .tr:not(.is-stop) .tr__rail{opacity:0}
 /* phones and reduced motion: the photo with every pin, then the stops as a list */
 .tr__flat{display:none}
-.tr__flat .tr__scene{position:relative;overflow:hidden;aspect-ratio:1400/788;margin:26px calc(-1 * var(--gr)) 0 calc(-1 * var(--gl))}
-.tr__flat .tr__pin{opacity:1;transform:scale(.74)}
 .tr__lno{position:relative;isolation:isolate;display:grid;place-items:center;width:32px;height:32px;font:800 14px/1 var(--f-d);color:var(--w)}
 .tr__lno::before{content:"";position:absolute;inset:3px;z-index:-1;background:var(--r-btn);rotate:45deg;box-shadow:0 0 0 3px var(--w)}
 /* phones: every stop is a slide, the photo zoomed on that spot, the red card under it */

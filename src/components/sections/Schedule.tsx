@@ -86,7 +86,7 @@ export function Schedule({ only, title = { a: 'Weekly ', b: 'schedule.' }, tag =
             </ul>
           </div>
         </div>
-        <div className="sc__foot"><p>Saturday and Sunday: closed. Private lessons by appointment.</p><Cta size="sm" /></div>
+        <div className="sc__foot"><p>Saturday and Sunday: closed. A 30-minute private trial is available.</p><Cta size="sm" /></div>
       </div>
     </section>
   )

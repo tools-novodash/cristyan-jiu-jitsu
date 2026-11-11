@@ -132,7 +132,7 @@ export function InstructorsPage() {
   return (
     <>
       <Hero eyebrow="Instructors" title={{ a: 'Led by a ', b: 'world champion.' }} crumbs={[{ label: 'Instructors', href: '/instructors' }]}
-        sub="Professor Cristyan Martins, 4th-degree black belt, two-time world champion, 20 years teaching. He teaches with his family and a team of specialists."
+        sub="Professor Cristyan Martins, 4th-degree black belt, two-time world champion, 20 years of experience. He teaches with his family and a team of specialists."
         photo={PROFESSOR.family} pos="50% 30%" />
       <Passport />
       <Professor />

@@ -54,7 +54,7 @@ export function llms() {
 - Google rating: ${SITE.google.rating} from ${SITE.google.count} reviews
 - Head coach: Cristyan Martins. ${PROFESSOR.facts.join('. ')}.
 - Free trial class: 60 minutes inside a regular class, kimono on loan, bring a t-shirt, no sparring, at most 5 trial students per class; a 30-minute private trial is available.
-- Belt promotion: kids earn a stripe every 30 classes in 90 days; adults every 60 classes in 120 days; two graduation ceremonies a year.
+- Belt promotion: kids earn a stripe every 30 classes in 90 days; adults every 60 classes in 120 days, a new belt about every two and a half years (sooner for competitors who reach the podium at major tournaments); two graduation ceremonies a year, at the start and the end of the year.
 
 ## Programs
 ${TRACKS.map((t) => `- ${t.name} (${t.tag}): ${ORIGIN}/programs/${t.slug}. Classes: ${classesOf(t).map((c) => `${c.name} (${c.ages})`).join(', ')}`).join('\n')}

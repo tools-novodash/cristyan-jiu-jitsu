@@ -166,7 +166,7 @@ export const TRIAL = {
   title: { a: 'Your first class is ', b: 'on us.' },
   lead: 'Free, 60 minutes, inside a regular class. You train with the group from the first day, at your pace.',
   points: [
-    { icon: 'clock', t: '60 minutes', d: 'A full regular class with the group, no cost and no commitment.' },
+    { icon: 'clock', t: '60 minutes', d: 'A full regular class with the group, at no cost.' },
     { icon: 'gi', t: 'We lend the kimono', d: 'Come in a t-shirt to wear under it. We also hand you a bottle of water.' },
     { icon: 'nospar', t: 'No sparring', d: 'Your trial class is technique and drills. Live rolling comes later, when you are ready.' },
     { icon: 'group', t: 'Small groups', d: 'At most five trial students per class, so the coach has time for you.' },
@@ -181,11 +181,11 @@ export const PROFESSOR = {
   role: 'Head coach and owner',
   rank: '4th-degree black belt',
   title: { a: 'Meet Professor ', b: 'Cristyan Martins' },
-  facts: ['4th-degree black belt', 'Two-time world champion', '20 years teaching', 'Degree in Physical Education', 'Postgraduate in Jiu-Jitsu', 'His own methodology for kids'], // JSON-LD + llms.txt
+  facts: ['4th-degree black belt', 'Two-time world champion', '20 years of experience', 'Degree in Physical Education', 'Postgraduate in Jiu-Jitsu', 'His own methodology for kids'], // JSON-LD + llms.txt
   // the home card shows these as an accordion (Adryan, 11/11): open one if you want the detail
   creds: [
     { q: '4th-degree black belt', a: 'Four degrees on the black belt and two world titles, earned over more than 20 years on the mat.' },
-    { q: '20 years teaching', a: 'He founded Evolution Jiu-Jitsu Martial Arts School in 2012 and, the same year, started a program built for children.' },
+    { q: '20 years of experience', a: 'He founded Evolution Jiu-Jitsu Martial Arts School in 2012 and, the same year, started a program built for children.' },
     { q: 'Physical Education degree, postgraduate in Jiu-Jitsu', a: 'Every class is planned like a lesson, with a clear curriculum, so kids and adults improve with purpose.' },
     { q: 'His own methodology for kids', a: 'Structured classes for confidence, coordination and discipline, with a stripe every 30 classes in 90 days.' },
   ],
@@ -226,7 +226,7 @@ export const FAQ = [
   { q: 'Is there sparring in the trial class?', a: 'No. The trial class is technique and drills. Live training comes later, when you and your coach agree you are ready.' },
   { q: 'What programs do you offer?', a: 'Kids BJJ in four age groups (4 to 15), Adult BJJ in three levels, Women\'s Self-Defense & Fitness, Box Fitness, Capoeira and Teen & Adult Judo.' },
   { q: 'When are classes?', a: 'Monday to Friday, from 4:30 PM to 9:00 PM. Kids train first, then teens, then adults. See the full schedule for every class.' },
-  { q: 'How does belt promotion work?', a: 'Kids earn a stripe every 30 classes in 90 days and usually change belts once a year. Adults earn a stripe every 60 classes in 120 days. We hold two graduation ceremonies a year.' },
+  { q: 'How does belt promotion work?', a: 'Kids earn a stripe every 30 classes in 90 days and usually change belts once a year. Adults earn a stripe every 60 classes in 120 days and change belts about every two and a half years, sooner for those who compete and reach the podium at major tournaments. We hold two graduation ceremonies a year, one at the start and one at the end.' },
   { q: 'Where are you located?', a: '1513 Iyannough Rd, Hyannis, MA 02601, on Cape Cod, with students from Hyannis, Barnstable, Yarmouth and Mashpee.' },
 ]
 
@@ -302,19 +302,23 @@ export const PARENTS = {
   ],
 }
 
-// ── the space: a tour of the empty academy in one photo, from the front door (Adryan, 11/11: not Lobo's
-// walk-in). x / y are the spot on about_hero in %, z the camera zoom there. ──
+// ── the space: a walk from the sidewalk to the mat, one real photo per stop (Arthur's photos, 11/11/2026;
+// Adryan: different images for the section). pos = the object-position that keeps the subject in a wide frame. ──
 export const TOUR = {
   tag: 'The space',
   title: { a: 'Look around ', b: 'before you walk in.' },
   lead: 'This is the academy on a quiet afternoon. Start at the front door.',
-  photo: img('about_hero', 'The empty training floor: grey mats, the Cristyan logo on the wall, parents seats behind the rope'),
   stops: [
-    { x: 95, y: 30, z: 2.1, title: 'The front door', text: '1513 Iyannough Rd, Hyannis. Walk in, say hi, and the coach takes it from there.' },
-    { x: 91, y: 42, z: 1.9, title: "Parents' seats", text: 'Right beside the mat, behind the rope. Parents watch the whole class.' },
-    { x: 52, y: 60, z: 1.45, title: 'The mat', text: 'A 5,000 sq ft academy. It started as a 1,000 sq ft room.', photo: img('kids_1', 'Kids lined up on the mat before class') },
-    { x: 39, y: 30, z: 2.05, title: 'The gear corner', text: 'Bags, pads and plyo boxes for Box Fitness and conditioning.', photo: img('boxing', 'The Box Fitness class with gloves in front of the heavy bags') },
-    { x: 26, y: 40, z: 1.9, title: 'The logo wall', text: 'Where every team photo is taken, from Tiny BJJ to the adult team.', photo: img('adult_2', 'The adult team seated in front of the Cristyan logo') },
+    { shot: img('space_1', 'The front of Cristyan Jiu-Jitsu on Iyannough Rd: the sign above a glass door and a walkway between the hedges'), pos: '50% 18%',
+      title: 'The front door', text: '1513 Iyannough Rd, Hyannis. Look for the sign, walk in, say hi, and the coach takes it from there.' },
+    { shot: img('space_2', 'Inside the door: the Cristyan logo rug, a row of seats along the wall and the mat behind a rope'), pos: '50% 58%',
+      title: "Parents' seats", text: 'Right inside the door, beside the mat and behind the rope. Parents watch the whole class.' },
+    { shot: img('space_3', 'The front desk with team gear, gis on mannequins and a drinks fridge'), pos: '50% 55%',
+      title: 'The front desk', text: 'Check in here, grab the water that comes with your trial class, and find gis and team gear.' },
+    { shot: img('space_4', 'The empty training floor: grey and black mats, the Cristyan logo and the team mural on the wall'), pos: '50% 55%',
+      title: 'The mat', text: 'A 5,000 sq ft academy. It started as a 1,000 sq ft room.', photo: img('kids_1', 'Kids lined up on the mat before class') },
+    { shot: img('space_5', 'From the logo rug at the door, the mat and the wall that reads train like a champion, grow like a family'), pos: '50% 4%',
+      title: 'The logo wall', text: 'Train like a champion, grow like a family. Every team photo is taken here.', photo: img('adult_2', 'The adult team seated in front of the Cristyan logo') },
   ],
   facts: [['166', 'students this season'], ['6', 'programs under one roof'], ['5', 'trial students per class at most']] as [string, string][],
 }
@@ -323,7 +327,7 @@ export const TOUR = {
 export const PASSPORT = {
   hd: ['Cristyan Jiu-Jitsu', 'Head coach'],
   hd2: ['Record', 'Titles and rank'],
-  rows: [['Name', 'Cristyan Martins'], ['Rank', '4th-degree black belt'], ['Teaching', '20 years'], ['Education', 'Physical Education, postgraduate in Jiu-Jitsu'], ['Academy', 'Hyannis, MA']] as [string, string][],
+  rows: [['Name', 'Cristyan Martins'], ['Rank', '4th-degree black belt'], ['Experience', '20 years'], ['Education', 'Physical Education, postgraduate in Jiu-Jitsu'], ['Academy', 'Hyannis, MA']] as [string, string][],
   // [CONFIRMAR] which world titles (event, year) for a sharper stamp
   stamps: ['World champion ×2', '4th degree', 'Since 2012', 'Kids method'],
   mrz: ['P<USACRISTYAN<<MARTINS<<<<<<<<<<<<<<<<<<<<<', '4THDEGREE<BLACKBELT<<HYANNIS<MA<<<<<<<<<<<<'],
@@ -343,7 +347,7 @@ export const KNOW = [
   { k: '01', t: 'Kids first, adults later', d: 'Kids from 4:30 PM, teens from 5:30 PM, adults from 6:45 PM until 9:00 PM.' },
   { k: '02', icon: 'cal', t: 'Monday to Friday', d: 'Saturday and Sunday the academy is closed.' },
   { k: '03', icon: 'check', t: 'Every class takes a trial', d: 'Pick any class on the board and book your free trial in it.' },
-  { k: '04', icon: 'group', t: 'Private lessons', d: 'By appointment, and a 30-minute private trial if you prefer one on one.' },
+  { k: '04', icon: 'group', t: 'One on one, if you prefer', d: 'Ask for a 30-minute private trial class instead of a group class.' },
 ]
 
 /** About · the eight values, each proved by a real photo and a fact of the academy (Adryan, 11/11: the

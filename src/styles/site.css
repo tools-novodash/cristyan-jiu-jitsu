@@ -129,6 +129,7 @@ html.menu-open{overflow:hidden}
 .hc--home .hc__card{min-height:calc(100svh / var(--zs,1) - 104px)}
 .hc__bg{position:absolute;inset:0;z-index:-2}
 .hc__bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);will-change:transform}
+@media (min-width:900px){.hc__bg .hc__pic{object-position:var(--wpos) !important}}
 .hc__card::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(13,13,15,.9) 0%,rgba(13,13,15,.66) 38%,rgba(13,13,15,.12) 72%,transparent),linear-gradient(0deg,rgba(13,13,15,.7),transparent 46%)}
 .hc__dim{position:absolute;inset:0;background:var(--k);opacity:0}
 .hc__copy{position:relative;width:100%}
@@ -298,9 +299,9 @@ html.menu-open{overflow:hidden}
 /* the button sits on the panel's bottom edge, half in and half out (Adryan, 11/11) */
 .pf__acts{position:absolute;left:50%;bottom:0;z-index:3;translate:-50% 50%}
 .pf__stage{position:relative;flex:1;display:flex;justify-content:center;align-items:flex-end;margin-top:30px;overflow:hidden}
-/* the panel behind him: red, flush with the bottom of the white card (Adryan, 11/11) */
-.pf__panel{position:absolute;left:0;right:0;bottom:0;height:52%;overflow:hidden;background:var(--k);--mark-cut:var(--k);transform-origin:50% 100%}
-/* the marks tone on tone, dark on the flat red, so the cut circle matches the panel (Adryan, 11/11) */
+/* the panel behind him: red, flush with the bottom of the white card (Adryan, 11/11: black, then red again) */
+.pf__panel{position:absolute;left:0;right:0;bottom:0;height:52%;overflow:hidden;background:var(--r);--mark-cut:var(--r);transform-origin:50% 100%}
+/* the logo marks in white at low opacity; the cut circle takes the panel color (Adryan, 11/11) */
 .pf__marks{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;color:rgba(255,255,255,.08)}
 .pf__marks svg{flex:none;height:88%;width:auto;aspect-ratio:1}
 .pf__me{position:relative;z-index:1;margin-bottom:0;width:min(calc(42vh / var(--zs,1)),360px,56%);line-height:0}
@@ -876,13 +877,15 @@ html.menu-open{overflow:hidden}
 .pstamp--3{right:6%;top:64%;transform:rotate(-5deg)}
 @media (max-width:999px){.ow__in{grid-template-columns:1fr}.pass{transform:none}}
 @media (max-width:620px){.pass{grid-template-columns:1fr}.pass::after{display:none}.pass__page{min-height:0}.pass__page--stamps{min-height:380px}.pass__mrz{position:static;margin-top:20px}}
-.insts{background:var(--k);color:var(--w)}
+/* pure black (Adryan, 11/11): the new portraits sit on black, so the section matches them with no seam */
+.insts{background:var(--color-black);color:var(--w)}
 .insts::before{display:none}
 .insts__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,6vw,88px) clamp(32px,4vw,72px);margin-top:20px}
 .inst{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);gap:clamp(18px,2.4vw,36px);align-items:center}
 .inst:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,.85fr)}
 .inst:nth-child(even) .inst__photo{order:2}
-.inst__photo{position:relative;aspect-ratio:4/5;background:var(--k-2)}
+.inst__photo{position:relative;aspect-ratio:4/5;background:var(--color-black)}
+.inst__photo:has(.inst__mono){background:var(--k-2)}
 .inst__photo img{width:100%;height:100%;object-fit:cover;-webkit-mask-image:linear-gradient(180deg,transparent 0,var(--color-black) 10%,var(--color-black) 78%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,var(--color-black) 10%,var(--color-black) 78%,transparent 100%)}
 .inst__mono{position:relative;display:grid;place-items:center;height:100%;color:rgba(255,255,255,.07);--mark-cut:var(--k-2)}
 .inst__mono svg{position:absolute;width:80%;height:80%}

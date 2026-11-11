@@ -79,7 +79,13 @@ for (const r of ROUTES) {
   const hi = html.match(/<img[^>]*fetchPriority="high"[^>]*>|<img[^>]*fetchpriority="high"[^>]*>/i)?.[0]
   const hiSrc = hi?.match(/\ssrc="([^"]+)"/)?.[1]
   const pick = (hiSrc && pre.find((l) => l.includes(`"${hiSrc}"`) || l.includes(hiSrc.replace(/\.webp$/, '-sm.webp')))) || pre[0]
-  const lcp = pick?.replace(/\/?>$/, ' fetchpriority="high">')
+  // a hero with a desktop <source> (src/components/sections/Hero.tsx `wide`): React preloads nothing inside a
+  // <picture>, so each screen gets its own preload, split by the source's media query
+  const pic = hi && html.match(/<picture><source ([^>]*)\/?>(?:(?!<\/picture>).)*fetchPriority="high"/s)
+  const at = (tag, a) => ` ${tag}`.match(new RegExp(`\\s${a}="([^"]+)"`, 'i'))?.[1]
+  const lcp = pic
+    ? [[pic[1], at(pic[1], 'media')], [hi, `not all and ${at(pic[1], 'media')}`]].map(([t, m]) => `<link rel="preload" as="image" imagesrcset="${at(t, 'srcSet') ?? at(t, 'src')}" imagesizes="${at(t, 'sizes') ?? '100vw'}" media="${m}" fetchpriority="high">`).join('\n')
+    : pick?.replace(/\/?>$/, ' fetchpriority="high">')
   const page = tpl
     .replace(/<title>[^<]*<\/title>/, `<title>${esc(r.title)}</title>`)
     .replace(/<meta name="description" content="[^"]*" \/>/, `<meta name="description" content="${esc(r.description)}" />`)

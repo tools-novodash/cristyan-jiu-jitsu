@@ -1,0 +1,40 @@
+/* Cristyan Jiu-Jitsu & Fitness · the only file with hex colours.
+   Tailwind 4: theme + utilities only (no preflight; the site's own reset is in styles/site.css).
+   @imports first, @font-face last (a @font-face between @imports silently drops what follows). */
+@layer theme, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+@import "./styles/site.css";
+
+@theme static {
+  /* brand: the red of the logo's circle (sampled: 238,30,38), ink, mat grey, paper */
+  --color-red: #EE1E26;
+  --color-red-hi: #FF3940;
+  --color-red-btn: #E01B23; /* the logo red under white text: 4.83:1 (the exact logo red gives 4.33) */
+  --color-red-deep: #A8111A;
+  --color-red-ink: #7E0C13;
+  --color-ink: #0D0D0F;
+  --color-ink-2: #141417;
+  --color-ink-3: #1C1C20;
+  --color-ink-4: #27272C;
+  --color-ink-5: #34343A;
+  --color-paper: #F4F2EE;
+  --color-paper-2: #EAE7E1;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-mat: #C9CACD;
+  --color-mute: #5E5E66;
+  --color-mute-d: #A3A3AB;
+  --color-line: #DDDAD3;
+  --color-gold: #E8B547;
+  --color-belt-white: #F7F7F5;
+  --color-belt-shade: #DCDCD8;
+  --color-belt-bar: #18181B;
+  --color-pass: #F3F1EA; /* the passport paper */
+}
+
+@font-face { font-family: "Saira"; src: url("/fonts/saira-wide.woff2") format("woff2"); font-weight: 700 900; font-stretch: 108%; font-style: normal; font-display: block; }
+@font-face { font-family: "Inter"; src: url("/fonts/inter-latin.woff2") format("woff2"); font-weight: 400 700; font-style: normal; font-display: block; }
+@font-face { font-family: "Scribble Kidsy"; src: url("/fonts/scribble-kidsy.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; } /* the Satori Kids hand, subset to the ticket notes: if they change, re-run fontTools.subset from satori-bjj-phoenix-az/public/fonts with --text */
+@font-face { font-family: "Saira Fallback"; src: local("Arial Black"), local("Arial Bold"); size-adjust: 92%; ascent-override: 92%; descent-override: 24%; }
+@font-face { font-family: "Inter Fallback"; src: local("Arial"); size-adjust: 107%; ascent-override: 90%; descent-override: 22%; }

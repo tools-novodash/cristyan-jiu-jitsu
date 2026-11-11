@@ -886,7 +886,9 @@ html.menu-open{overflow:hidden}
 .inst:nth-child(even) .inst__photo{order:2}
 .inst__photo{position:relative;aspect-ratio:4/5;background:var(--color-black)}
 .inst__photo:has(.inst__mono){background:var(--k-2)}
-.inst__photo img{width:100%;height:100%;object-fit:cover;-webkit-mask-image:linear-gradient(180deg,transparent 0,var(--color-black) 10%,var(--color-black) 78%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,var(--color-black) 10%,var(--color-black) 78%,transparent 100%)}
+/* the portraits' logo backdrop is cut straight at the file's sides (Adryan, 11/11: "a sombra ta cortada"): every
+   edge fades into the black, top and bottom as before and now the sides too */
+.inst__photo img{--fy:linear-gradient(180deg,transparent 0,var(--color-black) 10%,var(--color-black) 78%,transparent 100%);--fx:linear-gradient(90deg,transparent 0,var(--color-black) 16%,var(--color-black) 84%,transparent 100%);width:100%;height:100%;object-fit:cover;-webkit-mask-image:var(--fy),var(--fx);-webkit-mask-composite:source-in;mask-image:var(--fy),var(--fx);mask-composite:intersect}
 .inst__mono{position:relative;display:grid;place-items:center;height:100%;color:rgba(255,255,255,.07);--mark-cut:var(--k-2)}
 .inst__mono svg{position:absolute;width:80%;height:80%}
 .inst__mono b{position:relative;font:800 72px/1 var(--f-d);font-stretch:108%;color:var(--w)}
